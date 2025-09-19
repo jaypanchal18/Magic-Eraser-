@@ -638,6 +638,31 @@ def calculate_face_coordinates_for_ca_generic(piece: Piece, face_side: str, over
     v_min = o_min(v_axis) - b_min(v_axis)
     v_max = o_max(v_axis) - b_min(v_axis)
     
+    # For other_main faces, create perfect mirror for 3D wrapping (singer holes alignment)
+    if face_side == 'other_main':
+        # Get face dimensions for mirroring
+        if face_side in ['main', 'other_main']:
+            face_width = piece.length
+            face_height = piece.height
+        elif face_side in ['top', 'bottom']:
+            face_width = piece.length
+            face_height = piece.thickness
+        elif face_side in ['left', 'right']:
+            face_width = piece.thickness
+            face_height = piece.height
+        else:
+            face_width = face_height = 0.0
+        
+        # Create perfect mirror: flip both horizontal and vertical coordinates
+        # This ensures singer holes align when wrapping the mold around the 3D piece
+        u_min_mirrored = face_width - u_max
+        u_max_mirrored = face_width - u_min
+        v_min_mirrored = face_height - v_max
+        v_max_mirrored = face_height - v_min
+        
+        u_min, u_max = u_min_mirrored, u_max_mirrored
+        v_min, v_max = v_min_mirrored, v_max_mirrored
+    
     # Get face dimensions for coordinate validation
     if face_side in ['main', 'other_main']:
         # main faces = length × height
