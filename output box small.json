@@ -1,0 +1,465 @@
+{
+  "pieces": [
+    {
+      "name": "subtampo",
+      "bounds": {
+        "x_min": 20.100000000000023,
+        "x_max": 199.90000000000003,
+        "y_min": 104.80000000000001,
+        "y_max": 113.0,
+        "z_min": 20.0,
+        "z_max": 199.7
+      },
+      "length": 179.7,
+      "height": 179.8,
+      "thickness": 8.2,
+      "quantity": 1,
+      "faces": [
+        {
+          "faceSide": "main",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 179.7,
+              "y_min": 0.1,
+              "y_max": 179.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 1
+            }
+          ]
+        },
+        {
+          "faceSide": "other_main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "top",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "bottom",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "left",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "right",
+          "connectionAreas": []
+        }
+      ]
+    },
+    {
+      "name": "perna 4",
+      "bounds": {
+        "x_min": 20.0,
+        "x_max": 219.8,
+        "y_min": 0.0,
+        "y_max": 99.80000000000001,
+        "z_min": 0.19999999999998863,
+        "z_max": 20.0
+      },
+      "length": 99.8,
+      "height": 199.8,
+      "thickness": 19.8,
+      "quantity": 1,
+      "faces": [
+        {
+          "faceSide": "main",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 19.8,
+              "y_min": 0.1,
+              "y_max": 179.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 2
+            },
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 180.0,
+              "y_max": 199.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 3
+            }
+          ]
+        },
+        {
+          "faceSide": "other_main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "top",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "bottom",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 0.1,
+              "y_max": 19.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 4
+            }
+          ]
+        },
+        {
+          "faceSide": "left",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "right",
+          "connectionAreas": []
+        }
+      ]
+    },
+    {
+      "name": "perna 3",
+      "bounds": {
+        "x_min": 0.0,
+        "x_max": 199.8,
+        "y_min": 0.0,
+        "y_max": 99.80000000000001,
+        "z_min": 200.1,
+        "z_max": 219.9
+      },
+      "length": 99.8,
+      "height": 199.8,
+      "thickness": 19.8,
+      "quantity": 1,
+      "faces": [
+        {
+          "faceSide": "main",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 19.8,
+              "y_min": 20.0,
+              "y_max": 199.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 5
+            },
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 0.1,
+              "y_max": 19.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 7
+            }
+          ]
+        },
+        {
+          "faceSide": "other_main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "top",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "bottom",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 0.1,
+              "y_max": 19.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 6
+            }
+          ]
+        },
+        {
+          "faceSide": "left",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "right",
+          "connectionAreas": []
+        }
+      ]
+    },
+    {
+      "name": "fundo",
+      "bounds": {
+        "x_min": 20.0,
+        "x_max": 199.8,
+        "y_min": 0.0,
+        "y_max": 19.80000000000001,
+        "z_min": 20.0,
+        "z_max": 199.9
+      },
+      "length": 179.8,
+      "height": 180.0,
+      "thickness": 19.8,
+      "quantity": 1,
+      "faces": [
+        {
+          "faceSide": "main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "other_main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "top",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "bottom",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 179.8,
+              "y_min": 0.1,
+              "y_max": 19.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 2
+            },
+            {
+              "x_min": 0.1,
+              "x_max": 179.8,
+              "y_min": 0.1,
+              "y_max": 19.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 5
+            }
+          ]
+        },
+        {
+          "faceSide": "left",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "right",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 19.8,
+              "y_min": 0.1,
+              "y_max": 180.0,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 8
+            },
+            {
+              "x_min": 0.1,
+              "x_max": 19.8,
+              "y_min": 0.1,
+              "y_max": 180.0,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tampo",
+      "bounds": {
+        "x_min": 0.0,
+        "x_max": 219.8,
+        "y_min": 113.0,
+        "y_max": 131.3,
+        "z_min": 0.0,
+        "z_max": 219.9
+      },
+      "length": 219.8,
+      "height": 220.0,
+      "thickness": 18.3,
+      "quantity": 1,
+      "faces": [
+        {
+          "faceSide": "main",
+          "connectionAreas": [
+            {
+              "x_min": 20.1,
+              "x_max": 200.0,
+              "y_min": 20.0,
+              "y_max": 199.7,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 1
+            }
+          ]
+        },
+        {
+          "faceSide": "other_main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "top",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "bottom",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "left",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "right",
+          "connectionAreas": []
+        }
+      ]
+    },
+    {
+      "name": "perna 2",
+      "bounds": {
+        "x_min": 200.10000000000002,
+        "x_max": 219.90000000000003,
+        "y_min": 0.0,
+        "y_max": 99.80000000000001,
+        "z_min": 20.0,
+        "z_max": 219.9
+      },
+      "length": 99.8,
+      "height": 200.0,
+      "thickness": 19.8,
+      "quantity": 1,
+      "faces": [
+        {
+          "faceSide": "main",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 180.0,
+              "y_max": 200.0,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 6
+            },
+            {
+              "x_min": 0.1,
+              "x_max": 19.8,
+              "y_min": 0.1,
+              "y_max": 180.0,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 8
+            }
+          ]
+        },
+        {
+          "faceSide": "other_main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "top",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "bottom",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 0.1,
+              "y_max": 19.7,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 3
+            }
+          ]
+        },
+        {
+          "faceSide": "left",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "right",
+          "connectionAreas": []
+        }
+      ]
+    },
+    {
+      "name": "perna 1",
+      "bounds": {
+        "x_min": 0.0,
+        "x_max": 19.80000000000001,
+        "y_min": 0.0,
+        "y_max": 99.80000000000001,
+        "z_min": 0.0,
+        "z_max": 199.9
+      },
+      "length": 99.8,
+      "height": 200.0,
+      "thickness": 19.8,
+      "quantity": 1,
+      "faces": [
+        {
+          "faceSide": "main",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 0.2,
+              "y_max": 20.0,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 4
+            },
+            {
+              "x_min": 0.1,
+              "x_max": 19.8,
+              "y_min": 20.0,
+              "y_max": 200.0,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 9
+            }
+          ]
+        },
+        {
+          "faceSide": "other_main",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "top",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "bottom",
+          "connectionAreas": [
+            {
+              "x_min": 0.1,
+              "x_max": 99.8,
+              "y_min": 0.1,
+              "y_max": 19.8,
+              "fill": "black",
+              "opacity": 0.05,
+              "connectionId": 7
+            }
+          ]
+        },
+        {
+          "faceSide": "left",
+          "connectionAreas": []
+        },
+        {
+          "faceSide": "right",
+          "connectionAreas": []
+        }
+      ]
+    }
+  ]
+}
