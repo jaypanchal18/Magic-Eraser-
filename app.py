@@ -522,12 +522,13 @@ def map_pieces_in_3d_space_generic(pieces: List[Piece]) -> List[Dict]:
     print(f"  Total connections found: {len(connections)}")
     return connections
 
-def determine_face_for_connection_axis_generic(piece: Piece, connection_axis: str, overlap_bounds: Dict, all_pieces: List[Piece] = None) -> str:
+def determine_face_for_connection_axis_generic(piece: Piece, connection_axis: str, overlap_bounds: Dict, all_pieces: List[Piece] = None, other_piece: Piece = None) -> str:
     """
     Step 4: Geometry-driven mapping from connection axis -> face name GENERICALLY.
     - Determines which axis is height/length/thickness for this piece.
     - Chooses the face plane (pair) that corresponds to the two axes orthogonal to connection_axis.
     - Uses pure geometric analysis, no hardcoded piece names.
+    - For main faces, determines main vs other_main based on spatial relationship.
     """
     # compute per-axis sizes
     dim_x = piece.bounds.x_max - piece.bounds.x_min
@@ -559,14 +560,30 @@ def determine_face_for_connection_axis_generic(piece: Piece, connection_axis: st
     # Determine which named face pair corresponds to that plane.
     # We choose the pair whose (axis role) set matches the plane axes:
     # - (thickness, height) -> left/right
-    # - (length, height)    -> main (always prefer main over other_main)
+    # - (length, height)    -> main/other_main
     # - (length, thickness) -> top/bottom
     plane_set = set(plane_axes)
     if plane_set == set([thickness_axis, height_axis]):
         positive_face, negative_face = 'right', 'left'
     elif plane_set == set([length_axis, height_axis]):
-        # For main faces, always use 'main' to consolidate CAs on same face
-        return 'main'
+        # For main faces, determine main vs other_main based on relative spatial relationship
+        if other_piece is not None:
+            # Compare the two pieces' positions along the connection axis
+            piece_center = piece_centers[connection_axis]
+            other_center = {
+                'x': (other_piece.bounds.x_min + other_piece.bounds.x_max) / 2,
+                'y': (other_piece.bounds.y_min + other_piece.bounds.y_max) / 2,
+                'z': (other_piece.bounds.z_min + other_piece.bounds.z_max) / 2
+            }[connection_axis]
+            
+            # The piece that is "in front" (higher coordinate) gets 'main', 
+            # the piece that is "behind" (lower coordinate) gets 'other_main'
+            return 'main' if piece_center >= other_center else 'other_main'
+        else:
+            # Fallback to original logic if other_piece not provided
+            center_piece = piece_centers[connection_axis]
+            center_overlap = overlap_centers[connection_axis]
+            return 'main' if center_overlap >= center_piece else 'other_main'
     elif plane_set == set([length_axis, thickness_axis]):
         positive_face, negative_face = 'top', 'bottom'
     else:
@@ -788,8 +805,9 @@ def identify_and_structure_connection_areas_generic(pieces: List[Piece], connect
         connection_axis = connection['connection_axis']
         
         # Determine faces for each piece GENERICALLY
-        piece1_face = determine_face_for_connection_axis_generic(piece1, connection_axis, overlap_bounds, pieces)
-        piece2_face = determine_face_for_connection_axis_generic(piece2, connection_axis, overlap_bounds, pieces)
+        # Pass the other piece to ensure proper mirroring
+        piece1_face = determine_face_for_connection_axis_generic(piece1, connection_axis, overlap_bounds, pieces, piece2)
+        piece2_face = determine_face_for_connection_axis_generic(piece2, connection_axis, overlap_bounds, pieces, piece1)
         
         # Calculate face coordinates for connection areas
         piece1_coords = calculate_face_coordinates_for_ca_generic(piece1, piece1_face, overlap_bounds)
@@ -833,8 +851,8 @@ def create_final_json_output_generic(pieces: List[Piece], selected_template: flo
     
     return output
 
-def process_ca_identification_generic(input_file: str = "illustrator_positions box small.json", 
-                                    output_file: str = "output box small.json"):
+def process_ca_identification_generic(input_file: str = "illustrator_positions_new.json", 
+                                    output_file: str = "output_new.json"):
     """
     Main function - processes only Steps 1-4 GENERICALLY for any furniture model.
     """
